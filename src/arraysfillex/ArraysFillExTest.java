@@ -6,6 +6,7 @@ public class ArraysFillExTest {
 
     public static void main(String[] args) {
 
+        // 配列定義で初期化後にfill
         testBoolean();
         System.out.println();
         testChar();
@@ -23,6 +24,12 @@ public class ArraysFillExTest {
         testDouble();
         System.out.println();
         testString();
+        System.out.println();
+
+        // 配列定義のみでfill
+        testIntegerInit();
+        System.out.println();
+        testStringInit();
 
     }
 
@@ -222,6 +229,54 @@ public class ArraysFillExTest {
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
         System.out.println(Arrays.toString(array[1][1]));
+    }
+
+    private static void testIntegerInit() {
+
+        int[][][] array = new int[3][2][4];
+
+        System.out.println("初期化前");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
+                System.out.println();
+            }
+        }
+
+        ArraysFillEx.fill(array, -1);
+
+        System.out.println("初期化後");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
+                System.out.println();
+            }
+        }
+
+    }
+
+    private static void testStringInit() {
+
+        String[][][] array = new String[3][2][4];
+
+        System.out.println("初期化前");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
+                System.out.println();
+            }
+        }
+
+        ArraysFillEx.fill(array, "Dummy");
+
+        System.out.println("初期化後");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
+                System.out.println();
+            }
+        }
+
     }
 
 }
