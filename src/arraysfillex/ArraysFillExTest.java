@@ -30,6 +30,28 @@ public class ArraysFillExTest {
         testIntegerInit();
         System.out.println();
         testStringInit();
+        System.out.println();
+
+        // 他のクラス
+        System.out.println("他のクラス");
+        testHint();
+        System.out.println();
+
+        // 配列以外を渡す
+        System.out.println("配列以外を渡す");
+        try {
+            ArraysFillEx.fill(1, 2);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // クラスが異なる
+        System.out.println("クラスが異なる");
+        try {
+            ArraysFillEx.fill(new String[3], new Hint(1));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 
@@ -40,7 +62,7 @@ public class ArraysFillExTest {
                 { {true, true, true}, {true} }
             };
 
-        System.out.println("初期化前");
+        System.out.println("boolean初期化前");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -48,7 +70,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, false);
 
-        System.out.println("初期化後");
+        System.out.println("boolean初期化後");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -62,7 +84,7 @@ public class ArraysFillExTest {
                 { {'f', 'g', 'h'}, {'i'} }
             };
 
-        System.out.println("初期化前");
+        System.out.println("char初期化前");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -70,7 +92,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, 'z');
 
-        System.out.println("初期化後");
+        System.out.println("char初期化後");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -84,7 +106,7 @@ public class ArraysFillExTest {
                 { {5, 6, 7}, {8} }
             };
 
-        System.out.println("初期化前");
+        System.out.println("byte初期化前");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -92,7 +114,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, Byte.MAX_VALUE);
 
-        System.out.println("初期化後");
+        System.out.println("byte初期化後");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -106,7 +128,7 @@ public class ArraysFillExTest {
                 { {6, 7, 8}, {9} }
             };
 
-        System.out.println("初期化前");
+        System.out.println("short初期化前");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -114,7 +136,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, Short.MAX_VALUE);
 
-        System.out.println("初期化後");
+        System.out.println("short初期化後");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -128,7 +150,7 @@ public class ArraysFillExTest {
                 { {6, 7, 8}, {9} }
             };
 
-        System.out.println("初期化前");
+        System.out.println("int初期化前");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -136,7 +158,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, Integer.MAX_VALUE);
 
-        System.out.println("初期化後");
+        System.out.println("int初期化後");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -150,7 +172,7 @@ public class ArraysFillExTest {
                 { {6, 7, 8}, {9} }
             };
 
-        System.out.println("初期化前");
+        System.out.println("long初期化前");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -158,7 +180,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, Long.MAX_VALUE);
 
-        System.out.println("初期化後");
+        System.out.println("long初期化後");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -172,7 +194,7 @@ public class ArraysFillExTest {
                 { {6f, 7f, 8f}, {9f} }
             };
 
-        System.out.println("初期化前");
+        System.out.println("float初期化前");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -180,7 +202,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, Float.MAX_VALUE);
 
-        System.out.println("初期化後");
+        System.out.println("float初期化後");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -194,7 +216,7 @@ public class ArraysFillExTest {
                 { {7d, 8d, 9d}, {10d, 11d, 12d} }
             };
 
-        System.out.println("初期化前");
+        System.out.println("double初期化前");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -202,7 +224,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, 3.14);
 
-        System.out.println("初期化後");
+        System.out.println("double初期化後");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -216,7 +238,7 @@ public class ArraysFillExTest {
                 { {"g", "h", "i"}, {"j", "k", "l"} }
             };
 
-        System.out.println("初期化前");
+        System.out.println("String初期化前");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -224,7 +246,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, "zzzz");
 
-        System.out.println("初期化後");
+        System.out.println("String初期化後");
         System.out.println(Arrays.toString(array[0][0]));
         System.out.println(Arrays.toString(array[0][1]));
         System.out.println(Arrays.toString(array[1][0]));
@@ -235,7 +257,7 @@ public class ArraysFillExTest {
 
         int[][][] array = new int[3][2][4];
 
-        System.out.println("初期化前");
+        System.out.println("int初期化前");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
@@ -245,7 +267,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, -1);
 
-        System.out.println("初期化後");
+        System.out.println("int初期化後");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
@@ -259,7 +281,7 @@ public class ArraysFillExTest {
 
         String[][][] array = new String[3][2][4];
 
-        System.out.println("初期化前");
+        System.out.println("String初期化前");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
@@ -269,7 +291,7 @@ public class ArraysFillExTest {
 
         ArraysFillEx.fill(array, "Dummy");
 
-        System.out.println("初期化後");
+        System.out.println("String初期化後");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
@@ -277,6 +299,28 @@ public class ArraysFillExTest {
             }
         }
 
+    }
+
+    private static void testHint() {
+        Hint[][][] array = new Hint[2][3][4];
+
+        System.out.println("Hint初期化前");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
+                System.out.println();
+            }
+        }
+
+        ArraysFillEx.fill(array, new Hint(3));
+
+        System.out.println("Hint初期化後");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.printf("%d, %d, %s", i, j, Arrays.toString(array[i][j]));
+                System.out.println();
+            }
+        }
     }
 
 }
